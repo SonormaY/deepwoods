@@ -34,7 +34,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
-    neofetch
+    fastfetch
     git
   ];
 }
