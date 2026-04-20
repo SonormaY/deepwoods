@@ -32,7 +32,7 @@
   services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    nvim
+    neovim
     wget
     neofetch
     git
