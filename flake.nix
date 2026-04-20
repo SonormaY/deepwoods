@@ -1,13 +1,10 @@
+# flake.nix
 {
   description = "Deepwoods HomeLab Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    colmena = {
-      url = "github:zhaofengli/colmena";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    colmena.url = "github:zhaofengli/colmena";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -15,9 +12,12 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, colmena, sops-nix, ... }@inputs: {
-      colmena = {
+  outputs = { self, nixpkgs, colmena, sops-nix, ... }@inputs:
+    let
+      hosts = import ./hosts.nix;
+    in
+    {
+      colmenaHive = colmena.lib.makeHive {
         meta = {
           nixpkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -25,16 +25,17 @@
           };
         };
 
-        epona =
-          { name, nodes, pkgs, ... }:
-          {
-            deployment.targetHost = "192.168.50.2"; # Deploying locally for now
-            deployment.targetUser = "sonorma";
-
-            imports = [
-              ./hosts/epona/default.nix
-            ];
+        epona = {
+          deployment = {
+            targetHost = hosts.epona.ip;
+            targetUser = hosts.epona.user;
+            tags = hosts.epona.tags;
           };
+
+          imports = [
+            ./hosts/epona/configuration.nix
+          ];
+        };
       };
     };
 }

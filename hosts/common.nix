@@ -26,9 +26,10 @@
     description = "sonorma";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+  security.sudo.wheelNeedsPassword = false;
 
   networking.networkmanager.enable = true;
-
   services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [

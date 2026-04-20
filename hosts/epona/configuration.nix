@@ -1,9 +1,12 @@
 { config, pkgs, ... }:
 
+let
+  hosts = import ../../hosts.nix;
+in
 {
   imports = [
+    ../common.nix
     ./hardware.nix
-    ../common/default.nix
   ];
 
   networking.hostName = "epona";
