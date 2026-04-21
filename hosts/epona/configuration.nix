@@ -9,6 +9,7 @@ in
     ./hardware.nix
     ../../modules/core/cloudflared.nix
     ../../modules/core/sops.nix
+    ../../modules/backend/transmission.nix
   ];
 
   networking.hostName = "epona";
@@ -27,8 +28,14 @@ in
     credentialsFile = config.sops.secrets.cloudflared-creds.path;
 
     ingress = {
+      "torrent.deepwoods.website" = "http://localhost:9091";
       "epona.deepwoods.website" = "ssh://localhost:1488";
     };
+  };
+
+  deepwoods.backend.torrent = {
+    enable = true;
+    downloadDir = "/var/lib/transmission/downloads";
   };
 
   system.stateVersion = "25.11";
