@@ -8,6 +8,7 @@ in
     ../common.nix
     ./hardware.nix
     ../../modules/core/cloudflared.nix
+    ../../modules/core/sops.nix
   ];
 
   networking.hostName = "epona";
