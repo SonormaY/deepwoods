@@ -27,6 +27,11 @@ in
       description = "Path to the tunnel credentials file (managed by sops-nix)";
     };
 
+    certificateFile = mkOption {
+      type = types.str;
+      description = "Path to the tunnel certificate file";
+    };
+
     ingress = mkOption {
       type = types.attrs;
       default = { };
