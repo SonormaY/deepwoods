@@ -27,7 +27,7 @@ in
     credentialsFile = config.sops.secrets.cloudflared-creds.path;
 
     ingress = {
-      "epona.deepwoods.website" = "http://localhost:1488";
+      "epona.deepwoods.website" = "ssh://localhost:1488";
     };
   };
 
