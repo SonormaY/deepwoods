@@ -38,6 +38,7 @@
 
           imports = [
             ./hosts/epona/configuration.nix
+            inputs.sops-nix.nixosModules.sops
           ];
         };
       };

@@ -35,7 +35,10 @@
   };
 
   networking.networkmanager.enable = true;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 1488 ];
+  };
 
   environment.systemPackages = with pkgs; [
     neovim
