@@ -14,6 +14,7 @@ in
     ../../modules/backend/transmission.nix
     ../../modules/backend/lidarr.nix
     ../../modules/backend/prowlarr.nix
+    ../../modules/backend/flaresolverr.nix
     # Apps
     ../../modules/apps/navidrome.nix
   ];
@@ -53,6 +54,7 @@ in
 
       lidarr.enable = true;
       prowlarr.enable = true;
+      flaresolverr.enable = true;
     };
 
     apps.navidrome = {
