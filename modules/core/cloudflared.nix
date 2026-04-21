@@ -45,17 +45,16 @@ in
   # ============================================================================
   # MODULE IMPLEMENTATION
   # ============================================================================
-  users.users.cloudflared = {
-    group = "cloudflared";
-    isSystemUser = true;
-  };
-  users.groups.cloudflared = { };
 
-  config = mkIf cfg.enable {
+  config = {
+    users.users.cloudflared = {
+      group = "cloudflared";
+      isSystemUser = true;
+    };
+    users.groups.cloudflared = { };
 
-    services.cloudflared = {
+    services.cloudflared = mkIf cfg.enable {
       enable = true;
-      inherit (cfg) certificateFile;
       tunnels = {
         "${cfg.tunnelId}" = {
           inherit (cfg) credentialsFile;
