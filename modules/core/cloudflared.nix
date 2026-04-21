@@ -45,13 +45,13 @@ in
   # ============================================================================
   # MODULE IMPLEMENTATION
   # ============================================================================
+  users.users.cloudflared = {
+    group = "cloudflared";
+    isSystemUser = true;
+  };
+  users.groups.cloudflared = { };
 
   config = mkIf cfg.enable {
-    users.users.cloudflared = {
-      group = "cloudflared";
-      isSystemUser = true;
-    };
-    users.groups.cloudflared = { };
 
     services.cloudflared = {
       enable = true;
