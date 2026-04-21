@@ -45,5 +45,6 @@
     wget
     fastfetch
     git
+    cloudflared
   ];
 }
