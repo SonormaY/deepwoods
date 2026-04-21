@@ -34,12 +34,12 @@ in
 
     core.cloudflared = {
       enable = true;
+      certificateFile = "/home/sonorma/.cloudflared/cert.pem";
       tunnelId = "4b26bc6d-4f64-4b1b-92e1-d2bb3ea1afb6";
 
       credentialsFile = config.sops.secrets.cloudflared-creds.path;
 
       ingress = {
-        "torrent.deepwoods.website" = "http://localhost:9091";
         "epona.deepwoods.website" = "ssh://localhost:1488";
         "music.deepwoods.website" = "http://localhost:4533";
         "lidarr.deepwoods.website" = "http://localhost:8686";

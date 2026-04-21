@@ -50,6 +50,7 @@ in
 
     services.cloudflared = {
       enable = true;
+      inherit (cfg) certificateFile;
       tunnels = {
         "${cfg.tunnelId}" = {
           inherit (cfg) credentialsFile;
