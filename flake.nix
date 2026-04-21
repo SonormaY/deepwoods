@@ -17,6 +17,10 @@
       hosts = import ./hosts.nix;
     in
     {
+      devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+        buildInputs = [ colmena.packages.x86_64-linux.colmena ];
+      };
+
       colmenaHive = colmena.lib.makeHive {
         meta = {
           nixpkgs = import nixpkgs {
