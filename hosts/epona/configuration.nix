@@ -34,7 +34,7 @@ in
 
     core.cloudflared = {
       enable = false;
-      tunnelId = "4b26bc6d-4f64-4b1b-92e1-d2bb3ea1afb6";
+      tunnelId = "823ebdbd-734f-484e-bcc0-336bad417b6e";
 
       credentialsFile = config.sops.secrets.cloudflared-creds.path;
       certificateFile = "/home/sonorma/.cloudflared/cert.pem";
