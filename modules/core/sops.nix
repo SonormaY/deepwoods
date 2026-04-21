@@ -10,5 +10,10 @@
     secrets."cloudflared-creds" = {
       owner = "cloudflared";
     };
+
+    secrets."transmission-creds" = {
+      owner = "transmission";
+    };
+
   };
 }

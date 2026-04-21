@@ -23,10 +23,6 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  sops.secrets."transmission-creds" = {
-    owner = "transmission";
-  };
-
   # ============================================================================
   # SERVICES
   # ============================================================================
