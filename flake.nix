@@ -32,6 +32,7 @@
         epona = {
           deployment = {
             targetHost = hosts.epona.ip;
+            targetPort = hosts.epona.port;
             targetUser = hosts.epona.user;
             tags = hosts.epona.tags;
           };
