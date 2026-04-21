@@ -1,10 +1,10 @@
 keys:
-  - &epona "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEOCs1n1/KwAE8NsdGstrDQS7QdUR7cF3hzADGF+DJ5S root@deepwoods"
-  - &sonorma "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqkfb82pspE9A1p3DfWCT1sSUAjxd0ypJbi/m6wsyte sonorma@hellcat"
+  - &sonorma "age1ctfqfnqcwqpuqjzp487z2nx02slvgktfurd5pyx7f8ajup0cmacq7q69nf"
+  - &epona "age1frv6a2j8re0kh9dxhc9dx35jkr35hlggh5ye7spjrxdu3nh8hafq9she2v"
 
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:
-      - ssh:
+      - age:
           - *sonorma
           - *epona
