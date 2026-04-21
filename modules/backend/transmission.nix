@@ -23,6 +23,12 @@ in
       default = "/opt/storage/downloads";
       description = "The absolute path where completed torrents will be saved";
     };
+
+    credentialsFile = mkOption {
+      type = types.nullOr types.str;
+      default = null;
+      description = "Path to the JSON file containing rpc-username and rpc-password";
+    };
   };
 
   # ============================================================================
@@ -35,7 +41,6 @@ in
     services.transmission = {
       enable = true;
       package = pkgs.transmission_4;
-
       group = "media";
 
       inherit (cfg) credentialsFile;
