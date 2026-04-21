@@ -17,6 +17,10 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  sops.secrets."transmission-creds" = {
+    owner = "transmission";
+  };
+
   # ============================================================================
   # SERVICES
   # ============================================================================
@@ -36,6 +40,7 @@ in
   deepwoods.backend.torrent = {
     enable = true;
     downloadDir = "/var/lib/transmission/downloads";
+    credentialsFile = config.sops.secrets."transmission-creds".path;
   };
 
   system.stateVersion = "25.11";

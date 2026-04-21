@@ -38,6 +38,8 @@ in
 
       group = "media";
 
+      inherit (cfg) credentialsFile;
+
       openRPCPort = true;
       openPeerPorts = true;
 
@@ -51,7 +53,7 @@ in
         rpc-whitelist-enabled = false;
         rpc-host-whitelist-enabled = false;
 
-        rpc-authentication-required = false;
+        rpc-authentication-required = true;
 
         peer-port = 51413;
         port-forwarding-enabled = true;
