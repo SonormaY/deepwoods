@@ -33,7 +33,7 @@ in
   deepwoods = {
 
     core.cloudflared = {
-      enable = false;
+      enable = true;
       tunnelId = "823ebdbd-734f-484e-bcc0-336bad417b6e";
 
       credentialsFile = config.sops.secrets.cloudflared-creds.path;
