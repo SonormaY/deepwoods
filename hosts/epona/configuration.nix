@@ -19,6 +19,7 @@ in
     ../../modules/backend/flaresolverr.nix
     # Apps
     ../../modules/apps/navidrome.nix
+    ../../modules/apps/jellyfin.nix
   ];
 
   networking.hostName = "epona";
