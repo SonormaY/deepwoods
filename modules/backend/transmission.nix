@@ -68,6 +68,8 @@ in
     systemd.tmpfiles.rules = [
       "d ${cfg.downloadDir} 0775 transmission media -"
       "d ${cfg.downloadDir}/music 0775 transmission media -"
+      "d ${cfg.downloadDir}/movies 0775 transmission media -"
+      "d ${cfg.downloadDir}/shows 0775 transmission media -"
       "d ${cfg.downloadDir}/.incomplete 0775 transmission media -"
     ];
   };
