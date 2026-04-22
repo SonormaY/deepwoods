@@ -14,6 +14,8 @@ in
     ../../modules/backend/transmission.nix
     ../../modules/backend/lidarr.nix
     ../../modules/backend/prowlarr.nix
+    ../../modules/backend/radarr.nix
+    ../../modules/backend/sonarr.nix
     ../../modules/backend/flaresolverr.nix
     # Apps
     ../../modules/apps/navidrome.nix
@@ -42,10 +44,13 @@ in
         "music.deepwoods.website" = "http://localhost:4533";
         "lidarr.deepwoods.website" = "http://localhost:8686";
         "prowlarr.deepwoods.website" = "http://localhost:9696";
+        "jellyfin.deepwoods.website" = "http://localhost:8096";
+        "radarr.deepwoods.website" = "http://localhost:7878";
+        "sonarr.deepwoods.website" = "http://localhost:8989";
       };
     };
-    backend = {
 
+    backend = {
       torrent = {
         enable = true;
         downloadDir = "/var/lib/transmission/downloads";
@@ -55,11 +60,17 @@ in
       lidarr.enable = true;
       prowlarr.enable = true;
       flaresolverr.enable = true;
+      radarr.enable = true;
+      sonarr.enable = true;
     };
 
-    apps.navidrome = {
-      enable = true;
-      musicFolder = "/opt/media/music";
+    apps = {
+      navidrome = {
+        enable = true;
+        musicFolder = "/opt/media/music";
+      };
+
+      jellyfin.enable = true;
     };
   };
 
