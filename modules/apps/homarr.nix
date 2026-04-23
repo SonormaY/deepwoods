@@ -16,7 +16,7 @@ in {
         oci-containers.containers.homarr = {
           image = "ghcr.io/homarr-labs/homarr:latest";
 
-          environmentFiles = [ config.sops.secrets."homarr-encryption-key".path ];
+          inherit (cfg) keyFile;
 
           environment = {
             TZ = config.time.timeZone;

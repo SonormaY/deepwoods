@@ -80,9 +80,13 @@ in
         musicFolder = "/opt/media/music";
       };
 
+      homarr = {
+        enable = true;
+        keyFile = config.sops.secrets."homarr-encryption-key".path;
+      };
+
       jellyfin.enable = true;
       jellyseerr.enable = true;
-      homarr.enable = true;
     };
   };
 
