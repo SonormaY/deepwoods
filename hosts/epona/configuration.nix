@@ -82,7 +82,7 @@ in
 
       homarr = {
         enable = true;
-        keyFile = config.sops.secrets."homarr-encryption-key".path;
+        environmentFile = config.sops.secrets."homarr-encryption-key".path;
       };
 
       jellyfin.enable = true;

@@ -6,6 +6,11 @@ let
 in {
   options.deepwoods.apps.homarr = {
     enable = mkEnableOption "Homarr Dashboard (OCI)";
+
+    environmentFile = mkOption {
+      type = types.str;
+      description = "Path to the env file";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -16,7 +21,7 @@ in {
         oci-containers.containers.homarr = {
           image = "ghcr.io/homarr-labs/homarr:latest";
 
-          inherit (cfg) keyFile;
+          inherit (cfg) environmentFile;
 
           environment = {
             TZ = config.time.timeZone;
