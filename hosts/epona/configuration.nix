@@ -17,6 +17,7 @@ in
     ../../modules/backend/radarr.nix
     ../../modules/backend/sonarr.nix
     ../../modules/backend/flaresolverr.nix
+    ../../modules/backend/maintainerr.nix
     # Apps
     ../../modules/apps/navidrome.nix
     ../../modules/apps/jellyfin.nix
@@ -48,6 +49,7 @@ in
         "prowlarr.deepwoods.website" = "http://localhost:9696";
         "radarr.deepwoods.website" = "http://localhost:7878";
         "sonarr.deepwoods.website" = "http://localhost:8989";
+        "janitor.deepwoods.website" = "http://localhost:6246";
         # Apps
         "jellyfin.deepwoods.website" = "http://localhost:8096";
         "music.deepwoods.website" = "http://localhost:4533";
@@ -67,6 +69,7 @@ in
       flaresolverr.enable = true;
       radarr.enable = true;
       sonarr.enable = true;
+      maintainerr.enable = true;
     };
 
     apps = {
