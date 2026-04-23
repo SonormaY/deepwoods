@@ -20,6 +20,7 @@ in
     # Apps
     ../../modules/apps/navidrome.nix
     ../../modules/apps/jellyfin.nix
+    ../../modules/apps/homarr.nix
   ];
 
   networking.hostName = "epona";
@@ -40,14 +41,17 @@ in
       certificateFile = "/home/sonorma/.cloudflared/cert.pem";
 
       ingress = {
+        # Backend
         "torrent.deepwoods.website" = "http://localhost:9091";
         "epona.deepwoods.website" = "ssh://localhost:1488";
-        "music.deepwoods.website" = "http://localhost:4533";
         "lidarr.deepwoods.website" = "http://localhost:8686";
         "prowlarr.deepwoods.website" = "http://localhost:9696";
-        "jellyfin.deepwoods.website" = "http://localhost:8096";
         "radarr.deepwoods.website" = "http://localhost:7878";
         "sonarr.deepwoods.website" = "http://localhost:8989";
+        # Apps
+        "jellyfin.deepwoods.website" = "http://localhost:8096";
+        "music.deepwoods.website" = "http://localhost:4533";
+        "dash.deepwoods.website" = "http://localhost:7575";
       };
     };
 
@@ -72,6 +76,7 @@ in
       };
 
       jellyfin.enable = true;
+      homarr.enable = true;
     };
   };
 
