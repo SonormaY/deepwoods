@@ -6,14 +6,15 @@
     defaultSopsFormat = "yaml";
 
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    secrets = {
 
-    secrets."cloudflared-creds" = {
-      owner = "cloudflared";
+        "cloudflared-creds" = {
+          owner = "cloudflared";
+        };
+
+        "transmission-creds" = {
+          owner = "transmission";
+        };
     };
-
-    secrets."transmission-creds" = {
-      owner = "transmission";
-    };
-
   };
 }
