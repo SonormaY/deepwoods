@@ -22,6 +22,7 @@ in
     ../../modules/apps/navidrome.nix
     ../../modules/apps/jellyfin.nix
     ../../modules/apps/jellyseer.nix
+    ../../modules/apps/homarr.nix
   ];
 
   networking.hostName = "epona";
@@ -54,6 +55,7 @@ in
         "jellyfin.deepwoods.website" = "http://localhost:8096";
         "music.deepwoods.website" = "http://localhost:4533";
         "requests.deepwoods.website" = "http://localhost:5055";
+        "dash.deepwoods.website" = "http://localhost:7575";
       };
     };
 
@@ -69,7 +71,7 @@ in
       flaresolverr.enable = true;
       radarr.enable = true;
       sonarr.enable = true;
-      maintainerr.enable = true;
+      # maintainerr.enable = true;
     };
 
     apps = {
@@ -80,6 +82,7 @@ in
 
       jellyfin.enable = true;
       jellyseerr.enable = true;
+      homarr.enable = true;
     };
   };
 
