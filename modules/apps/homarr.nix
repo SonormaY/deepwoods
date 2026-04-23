@@ -2,12 +2,12 @@
 
 with lib;
 let
-  cfg = config.deepwoods.apps.dashboard;
+  cfg = config.deepwoods.apps.homarr;
 in {
   # ============================================================================
   # MODULE OPTIONS
   # ============================================================================
-  options.deepwoods.apps.dashboard = {
+  options.deepwoods.apps.homarr = {
     enable = mkEnableOption "Homarr Dashboard";
   };
 
