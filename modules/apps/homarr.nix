@@ -21,7 +21,7 @@ in {
         oci-containers.containers.homarr = {
           image = "ghcr.io/homarr-labs/homarr:latest";
 
-          inherit (cfg) environmentFile;
+          environmentFiles = [ cfg.environmentFile ];
 
           environment = {
             TZ = config.time.timeZone;
@@ -34,11 +34,6 @@ in {
             "/var/run/docker.sock:/var/run/docker.sock:ro"
           ];
         };
-    };
-
-    sops.secrets."homarr_env" = {
-      sopsFile = ../../secrets/secrets.yaml;
-      restartUnits = [ "docker-homarr.service" ]; 
     };
   };
 }
