@@ -1,0 +1,13 @@
+name = "deepwoods_fabric"
+author = "Sonorma"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "c6f38bac56b72cdf3b6d3062a4cfbf5bee5e85c1406b4e64e26838a51d63fb41"
+
+[versions]
+fabric = "0.19.2"
+minecraft = "26.1.2"

@@ -5,14 +5,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     colmena.url = "github:zhaofengli/colmena";
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = { self, nixpkgs, colmena, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, colmena, sops-nix, nix-minecraft, ... }@inputs:
     let
       hosts = import ./hosts.nix;
     in
@@ -26,6 +26,7 @@
           nixpkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnfree = true;
+            overlays = [ inputs.nix-minecraft.overlay ];
           };
         };
 
@@ -40,6 +41,7 @@
           imports = [
             ./hosts/epona/configuration.nix
             inputs.sops-nix.nixosModules.sops
+            inputs.nix-minecraft.nixosModules.minecraft-servers
           ];
         };
       };

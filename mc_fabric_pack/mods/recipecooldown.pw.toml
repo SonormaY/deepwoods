@@ -1,0 +1,13 @@
+name = "RecipeCooldown"
+filename = "RecipeCooldown-1.0.0+26.1.2.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/7LEWYKTV/versions/Fjy9EgJZ/RecipeCooldown-1.0.0%2B26.1.2.jar"
+hash-format = "sha512"
+hash = "98c759261d296fb1dc1f60a142b776047604306881b6bf8b6661f63a3ae70d77f53225c60efaf94a0d9c045c19e40a35131b4b22db9c485eb8776eddff9c0427"
+
+[update]
+[update.modrinth]
+mod-id = "7LEWYKTV"
+version = "Fjy9EgJZ"

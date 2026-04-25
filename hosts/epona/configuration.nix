@@ -23,6 +23,7 @@ in
     ../../modules/apps/jellyfin.nix
     ../../modules/apps/jellyseer.nix
     ../../modules/apps/homarr.nix
+    ../../modules/apps/minecraft.nix
   ];
 
   networking.hostName = "epona";
@@ -87,6 +88,7 @@ in
 
       jellyfin.enable = true;
       jellyseerr.enable = true;
+      minecraft.enable = true;
     };
   };
 
