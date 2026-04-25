@@ -42,9 +42,9 @@ in {
           "mods" = "${modpack}/mods";
         };
 
-        files = {
-          "config" = "${modpack}/config";
-        };
+        # files = {
+        #   "config" = "${modpack}/config";
+        # };
       };
     };
   };
