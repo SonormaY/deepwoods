@@ -3,7 +3,7 @@
 let
   cfg = config.deepwoods.apps.minecraft;
   modpack = pkgs.fetchPackwizModpack {
-    url = "https://github.com/Misterio77/Modpack/raw/0.2.9/pack.toml";
+    url = "https://github.com/SonormaY/deepwoods/blob/9746c0f1f721ff4c233645daa5cc13a0bdf6ce0d/mc_fabric_pack/pack.toml";
     packHash = "";
   };
 in {
