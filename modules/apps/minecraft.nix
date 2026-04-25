@@ -22,6 +22,7 @@ in {
 
         package = pkgs.fabricServers.fabric-26_1_2.override {
           loaderVersion = "0.19.2";
+          jre_headless = pkgs.jdk25_headless;
         };
 
         jvmOpts = "-Xms4G -Xmx4G";
