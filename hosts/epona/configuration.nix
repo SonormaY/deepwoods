@@ -21,7 +21,7 @@ in
     # Apps
     ../../modules/apps/navidrome.nix
     ../../modules/apps/jellyfin.nix
-    ../../modules/apps/jellyseer.nix
+    ../../modules/apps/seerr.nix
     ../../modules/apps/homarr.nix
     ../../modules/apps/minecraft.nix
   ];
