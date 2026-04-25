@@ -15,6 +15,8 @@
         "transmission-creds" = {
           owner = "transmission";
         };
+
+        "homarr-encryption-key" = {};
     };
   };
 }
