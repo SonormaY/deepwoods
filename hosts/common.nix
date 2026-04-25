@@ -46,5 +46,6 @@
     fastfetch
     git
     cloudflared
+    tmux
   ];
 }
