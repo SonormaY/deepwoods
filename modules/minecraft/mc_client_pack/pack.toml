@@ -1,0 +1,13 @@
+name = "Client pack for deepwoods server"
+author = "Sonorma"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "4dafce7887e6f00699c39342bef74c31031ad7024a212ae8f7f24b41fbb1eab2"
+
+[versions]
+fabric = "0.19.2"
+minecraft = "26.1.2"
