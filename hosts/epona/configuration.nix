@@ -87,7 +87,7 @@ in
       };
 
       jellyfin.enable = true;
-      jellyseerr.enable = true;
+      seerr.enable = true;
       minecraft.enable = true;
     };
   };
