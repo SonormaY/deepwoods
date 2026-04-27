@@ -24,7 +24,7 @@
   users.users.sonorma = {
     isNormalUser = true;
     description = "sonorma";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "media" ];
   };
   security.sudo.wheelNeedsPassword = false;
 
