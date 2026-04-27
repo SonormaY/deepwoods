@@ -54,6 +54,7 @@ in
         "sonarr.deepwoods.website" = "http://localhost:8989";
         "janitor.deepwoods.website" = "http://localhost:6246";
         "bazarr.deepwoods.website" = "http://localhost:6767";
+        "maintainerr.deepwoods.website" = "http://localhost:6246";
         # Apps
         "jellyfin.deepwoods.website" = "http://localhost:8096";
         "music.deepwoods.website" = "http://localhost:4533";
@@ -75,7 +76,7 @@ in
       radarr.enable = true;
       sonarr.enable = true;
       bazarr.enable = true;
-      # maintainerr.enable = true;
+      maintainerr.enable = true;
     };
 
     apps = {
