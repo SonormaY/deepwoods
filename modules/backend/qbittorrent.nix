@@ -79,6 +79,7 @@ in
       "d ${cfg.downloadDir}/movies 0775 qbittorrent media -"
       "d ${cfg.downloadDir}/shows 0775 qbittorrent media -"
       "d ${cfg.downloadDir}/.incomplete 0775 qbittorrent media -"
+      "d ${cfg.downloadDir}/.torrent 0775 qbittorrent media -"
     ];
   };
 }

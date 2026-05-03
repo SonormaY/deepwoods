@@ -9,6 +9,17 @@ with lib;
 
 let
   cfg = config.deepwoods.apps.navidrome;
+
+  nfoPlugin = pkgs.fetchurl {
+    url = "https://github.com/metalheim/navidrome-plugin-artist-nfo-metadata/releases/download/v1.3.0/artist-nfo-metadata.ndp";
+    sha256 = "12ff10kqpxv6b7zii810ma2q1vxwkq1x26aykyzqlpqpjh6crmsl";
+  };
+
+  navidromePlugins = pkgs.runCommand "navidrome-plugins" {} ''
+    mkdir -p $out
+    ln -s ${nfoPlugin} $out/artist-nfo-metadata.ndp
+  '';
+
 in
 {
   options.deepwoods.apps.navidrome = {
@@ -28,6 +39,13 @@ in
         MusicFolder = cfg.musicFolder;
         Address = "0.0.0.0";
         Port = 4533;
+
+        Plugins = {
+          Enabled = true;
+          Folder = "${navidromePlugins}";
+        };
+
+        Agents = "artist-nfo-metadata,lastfm,deezer,spotify";
       };
     };
 
