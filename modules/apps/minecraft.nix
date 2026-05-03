@@ -4,7 +4,7 @@ let
   cfg = config.deepwoods.apps.minecraft;
   modpack = pkgs.fetchPackwizModpack {
     url = "https://raw.githubusercontent.com/SonormaY/deepwoods/refs/heads/main/modules/minecraft/mc_fabric_pack/pack.toml";
-    packHash = "sha256-GqYabwNz6vnvxR9mXwBq26RY0Qzl7cM0sBRkokuzmdo=";
+    packHash = "sha256-gDPDQgGc9iO5oWk0l5bD2Wt4/fPzy5qVaKQKeDbMJHs=";
   };
 in {
   options.deepwoods.apps.minecraft = {

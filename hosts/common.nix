@@ -37,7 +37,7 @@
   networking.networkmanager.enable = true;
   services.openssh = {
     enable = true;
-    ports = [ 1488 ];
+    ports = [ 1488 8000 ];
   };
 
   environment.systemPackages = with pkgs; [

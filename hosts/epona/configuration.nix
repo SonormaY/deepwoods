@@ -11,7 +11,8 @@ in
     ../../modules/core/cloudflared.nix
     ../../modules/core/sops.nix
     # Backend
-    ../../modules/backend/transmission.nix
+    ../../modules/backend/qbittorrent.nix
+    ../../modules/backend/qbit-manage.nix
     ../../modules/backend/lidarr.nix
     ../../modules/backend/prowlarr.nix
     ../../modules/backend/radarr.nix
@@ -46,13 +47,12 @@ in
 
       ingress = {
         # Backend
-        "torrent.deepwoods.website" = "http://localhost:9091";
+        "torrent.deepwoods.website" = "http://localhost:8080";
         "epona.deepwoods.website" = "ssh://localhost:1488";
         "lidarr.deepwoods.website" = "http://localhost:8686";
         "prowlarr.deepwoods.website" = "http://localhost:9696";
         "radarr.deepwoods.website" = "http://localhost:7878";
         "sonarr.deepwoods.website" = "http://localhost:8989";
-        "janitor.deepwoods.website" = "http://localhost:6246";
         "bazarr.deepwoods.website" = "http://localhost:6767";
         "maintainerr.deepwoods.website" = "http://localhost:6246";
         # Apps
@@ -60,11 +60,12 @@ in
         "music.deepwoods.website" = "http://localhost:4533";
         "requests.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
+        "zoo.deepwoods.website" = "http://localhost:8000";
       };
     };
 
     backend = {
-      torrent = {
+      qbittorrent = {
         enable = true;
         downloadDir = "/var/lib/transmission/downloads";
         credentialsFile = config.sops.secrets."transmission-creds".path;
@@ -77,6 +78,7 @@ in
       sonarr.enable = true;
       bazarr.enable = true;
       maintainerr.enable = true;
+      qbit-manage.enable=true;
     };
 
     apps = {
