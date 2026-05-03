@@ -18,7 +18,7 @@ in
     systemd = {
       services.bazarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
-        ReadWritePaths = [ "/var/lib/torrent/downloads" ];
+        ReadWritePaths = [ "/var/lib/torrent" ];
       };
     };
   };

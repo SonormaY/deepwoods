@@ -18,7 +18,7 @@ in
 
       services.sonarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
-        ReadWritePaths = [ "/var/lib/torrent/downloads" ];
+        ReadWritePaths = [ "/var/lib/torrent" ];
       };
 
       tmpfiles.rules = [
