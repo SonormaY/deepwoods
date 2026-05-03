@@ -15,9 +15,15 @@ let
     sha256 = "12ff10kqpxv6b7zii810ma2q1vxwkq1x26aykyzqlpqpjh6crmsl";
   };
 
+  lrclibPlugin = pkgs.fetchurl {
+    url = "https://github.com/kepelet/navidrome-lrclib-plugin/releases/download/0.1.0/navidrome-lrclib.ndp";
+    sha256 = "0qbly3c0xgql9v90kqlk9pxvd514hlnsam3f7sq3x970irvng0ca";
+  };
+
   navidromePlugins = pkgs.runCommand "navidrome-plugins" {} ''
     mkdir -p $out
     ln -s ${nfoPlugin} $out/artist-nfo-metadata.ndp
+    ln -s ${lrclibPlugin} $out/lrclib.ndp
   '';
 
 in
