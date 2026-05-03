@@ -58,7 +58,7 @@ in
         # Apps
         "jellyfin.deepwoods.website" = "http://localhost:8096";
         "music.deepwoods.website" = "http://localhost:4533";
-        "requests.deepwoods.website" = "http://localhost:5055";
+        "seerr.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
         "zoo.deepwoods.website" = "http://localhost:8000";
       };

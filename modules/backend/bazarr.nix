@@ -13,12 +13,17 @@ in
   config = mkIf cfg.enable {
     services.bazarr = {
       enable = true;
+      group = "media";
     };
 
     systemd = {
       services.bazarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
-        ReadWritePaths = [ "/var/lib/torrent" ];
+        ReadWritePaths = [ 
+          "/var/lib/bazarr"
+          "/opt/media" 
+        ];
+        ProtectHome = "read-only";
       };
     };
   };
