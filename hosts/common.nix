@@ -61,5 +61,7 @@
     git
     cloudflared
     tmux
+    hddtemp
+    lm_sensors
   ];
 }
