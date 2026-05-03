@@ -67,8 +67,7 @@ in
     backend = {
       qbittorrent = {
         enable = true;
-        downloadDir = "/var/lib/transmission/downloads";
-        credentialsFile = config.sops.secrets."transmission-creds".path;
+        downloadDir = "/var/lib/torrent";
       };
 
       lidarr.enable = true;

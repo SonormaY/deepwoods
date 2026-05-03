@@ -28,10 +28,24 @@
   };
   security.sudo.wheelNeedsPassword = false;
 
-  nix.settings = {
-    trusted-users = [ "root" "@wheel" ];
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
+  nix = {
+    settings = {
+      trusted-users = [ "root" "@wheel" ];
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 3d";
+    };
+  };
+
+  virtualisation.docker.autoPrune = {
+    enable = true;
+    dates = "weekly";
+    flags = [ "--all" "--volumes" ];
   };
 
   networking.networkmanager.enable = true;

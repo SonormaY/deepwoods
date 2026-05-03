@@ -12,9 +12,9 @@
           owner = "cloudflared";
         };
 
-        "transmission-creds" = {
-          owner = "transmission";
-        };
+        # "transmission-creds" = {
+        #   owner = "transmission";
+        # };
 
         "homarr-encryption-key" = {};
     };
