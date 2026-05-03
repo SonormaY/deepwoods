@@ -26,15 +26,20 @@ in
     ];
 
     virtualisation.oci-containers.containers.qbit-manage = {
-      image = "hotio/qbit_manage:latest";
+      image = "ghcr.io/stuffanthings/qbit_manage:latest";
+      extraOptions = [ "--network=host" ];
       environment = {
         PUID = "0";
         PGID = "0";
         TZ = "Europe/Kyiv";
+        QBIT_USER = "sonorma";
       };
       volumes = [
         "/var/lib/qbit-manage/config:/config"
         "${cfg.downloadDir}:${cfg.downloadDir}:rw"
+      ];
+      environmentFiles = [
+        config.sops.secrets."qbit-password".path
       ];
     };
   };

@@ -17,6 +17,7 @@
         # };
 
         "homarr-encryption-key" = {};
+        "qbit-password" = { };
     };
   };
 }

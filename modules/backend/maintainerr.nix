@@ -15,13 +15,17 @@ in {
   # MODULE IMPLEMENTATION
   # ============================================================================
   config = mkIf cfg.enable {
+    systemd.tmpfiles.rules = [
+      "d /opt/appdata/maintainerr 0775 1000 1000 -"
+    ];
     virtualisation = {
 
         docker.enable = true;
         oci-containers.backend = "docker";
 
         oci-containers.containers."maintainerr" = {
-        image = "ghcr.io/jorenn92/maintainerr:latest";
+        image = "ghcr.io/maintainerr/maintainerr:latest";
+        extraOptions = [ "--network=host" ];
         ports = [ "6246:6246" ];
         volumes = [
             "/opt/appdata/maintainerr:/opt/data"
