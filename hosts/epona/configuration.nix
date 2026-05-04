@@ -60,7 +60,6 @@ in
         "music.deepwoods.website" = "http://localhost:4533";
         "seerr.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
-        "zoo.deepwoods.website" = "http://localhost:8000";
       };
     };
 
@@ -93,7 +92,7 @@ in
 
       jellyfin.enable = true;
       seerr.enable = true;
-      minecraft.enable = true;
+      minecraft.enable = false;
     };
   };
 
