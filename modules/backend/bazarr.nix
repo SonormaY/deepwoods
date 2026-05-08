@@ -21,7 +21,7 @@ in
         SupplementaryGroups = [ "media" ];
         ReadWritePaths = [ 
           "/var/lib/bazarr"
-          "/opt/media" 
+          "/opt/media"
         ];
         ProtectHome = "read-only";
       };
