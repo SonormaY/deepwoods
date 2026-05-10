@@ -18,7 +18,6 @@ in
 
       services.radarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
-        ReadWritePaths = [ "/var/lib/torrent" ];
       };
 
       tmpfiles.rules = [
