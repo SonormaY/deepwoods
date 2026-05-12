@@ -18,6 +18,7 @@ in
 
       services.sonarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
+        Group = "media";
       };
 
       tmpfiles.rules = [

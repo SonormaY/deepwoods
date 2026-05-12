@@ -18,6 +18,7 @@ in
 
       services.radarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
+        Group = "media";
       };
 
       tmpfiles.rules = [

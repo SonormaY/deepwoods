@@ -19,6 +19,7 @@ in
     systemd = {
       services.bazarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
+        Group = "media";
         ReadWritePaths = [ 
           "/var/lib/bazarr"
           "/opt/media"
