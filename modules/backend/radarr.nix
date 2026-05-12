@@ -18,7 +18,7 @@ in
 
       services.radarr.serviceConfig = {
         SupplementaryGroups = [ "media" ];
-        Group = "media";
+        Group = lib.mkForce "media";
       };
 
       tmpfiles.rules = [
