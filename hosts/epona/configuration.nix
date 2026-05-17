@@ -93,7 +93,7 @@ in
 
       jellyfin.enable = true;
       seerr.enable = true;
-      minecraft.enable = false;
+      minecraft.enable = true;
     };
   };
 
