@@ -60,6 +60,7 @@ in
         "music.deepwoods.website" = "http://localhost:4533";
         "seerr.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
+        "mc.deepwoods.website" = "tcp://localhost:25565";
       };
     };
 
