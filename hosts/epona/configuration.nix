@@ -61,6 +61,7 @@ in
         "seerr.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
         "mc.deepwoods.website" = "tcp://localhost:25565";
+        "rss.deepwoods.website" = "tcp://localhost:80";
       };
     };
 
@@ -94,6 +95,7 @@ in
       jellyfin.enable = true;
       seerr.enable = true;
       minecraft.enable = true;
+      freshrss.enable = true;
     };
   };
 
