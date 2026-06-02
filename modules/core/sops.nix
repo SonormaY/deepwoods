@@ -8,16 +8,17 @@
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     secrets = {
 
-        "cloudflared-creds" = {
-          owner = "cloudflared";
-        };
+      "cloudflared-creds" = {
+        owner = "cloudflared";
+      };
 
-        # "transmission-creds" = {
-        #   owner = "transmission";
-        # };
+      # "transmission-creds" = {
+      #   owner = "transmission";
+      # };
 
-        "homarr-encryption-key" = {};
-        "qbit-password" = { };
+      "homarr-encryption-key" = { };
+      "qbit-password" = { };
+      "couchdb-creds" = { };
     };
   };
 }

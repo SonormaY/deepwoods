@@ -4,7 +4,8 @@ with lib;
 
 let
   cfg = config.deepwoods.apps.freshrss;
-in {
+in
+{
   options.deepwoods.apps.freshrss = {
     enable = mkEnableOption "FreshRSS Feed Aggregator";
   };
@@ -25,5 +26,5 @@ in {
     systemd.services.freshrss-init = {
       serviceConfig.ReadWritePaths = [ "/var/lib/freshrss" ];
     };
-  }
+  };
 }

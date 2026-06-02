@@ -26,6 +26,7 @@ in
     ../../modules/apps/seerr.nix
     ../../modules/apps/homarr.nix
     ../../modules/apps/minecraft.nix
+    ../../modules/apps/freshrss.nix
   ];
 
   networking.hostName = "epona";
@@ -61,7 +62,8 @@ in
         "seerr.deepwoods.website" = "http://localhost:5055";
         "dash.deepwoods.website" = "http://localhost:7575";
         "mc.deepwoods.website" = "tcp://localhost:25565";
-        "rss.deepwoods.website" = "tcp://localhost:80";
+        "rss.deepwoods.website" = "http://localhost:80";
+        "obsidian.deepwoods.website" = "http://localhost:5984";
       };
     };
 
@@ -78,7 +80,7 @@ in
       sonarr.enable = true;
       bazarr.enable = true;
       maintainerr.enable = true;
-      qbit-manage.enable=true;
+      qbit-manage.enable = true;
     };
 
     apps = {
