@@ -51,6 +51,11 @@ hash = "567b3b5c08e5860de765b30e6a73e2bb1a4c63f725165c4113219269ce1b4c1d"
 metafile = true
 
 [[files]]
+file = "mods/mouse-wheelie.pw.toml"
+hash = "4faca2e0642f517079f46d0ec9336a3c2ea075fad5dc359898983065fee6645a"
+metafile = true
+
+[[files]]
 file = "mods/noisiumforked.pw.toml"
 hash = "2c08bbdf7dc74bb0c6775311ecca268dae129e4573a2102a651da48fa4fe311d"
 metafile = true

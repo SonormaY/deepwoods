@@ -20,6 +20,7 @@ in
     ../../modules/backend/flaresolverr.nix
     ../../modules/backend/maintainerr.nix
     ../../modules/backend/bazarr.nix
+    ../../modules/backend/obsidian-sync.nix
     # Apps
     ../../modules/apps/navidrome.nix
     ../../modules/apps/jellyfin.nix
@@ -98,6 +99,7 @@ in
       seerr.enable = true;
       minecraft.enable = true;
       freshrss.enable = true;
+
     };
   };
 

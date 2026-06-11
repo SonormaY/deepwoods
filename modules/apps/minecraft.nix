@@ -48,6 +48,7 @@ in
           sonormay = "724e39c4-9e55-40a8-9252-0a9170b4cf19";
           Vit_the_master = "bb436f6e-0b86-4b58-8554-5990c39a1e3c";
           _Jaehaerys_ = "5a4620ba-d904-4b7b-8744-a1f063a3fa3e";
+          emerbin = "11538cce-7813-4943-8f21-d9851cfff2c0";
         };
 
         symlinks = {

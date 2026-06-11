@@ -15,6 +15,7 @@
 
     volumes = [
       "/var/lib/couchdb:/opt/couchdb/data"
+      "/var/lib/couchdb/etc:/opt/couchdb/etc/local.d"
     ];
 
     environmentFiles = [
