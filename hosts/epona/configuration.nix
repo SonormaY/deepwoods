@@ -28,6 +28,7 @@ in
     ../../modules/apps/homarr.nix
     ../../modules/apps/minecraft.nix
     ../../modules/apps/freshrss.nix
+    ../../modules/apps/terraria.nix
   ];
 
   networking.hostName = "epona";
@@ -99,6 +100,7 @@ in
       seerr.enable = true;
       minecraft.enable = true;
       freshrss.enable = true;
+      terraria.enable = true;
 
     };
   };
