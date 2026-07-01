@@ -63,5 +63,6 @@
     tmux
     hddtemp
     lm_sensors
+    smartmontools
   ];
 }

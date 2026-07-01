@@ -26,12 +26,15 @@ in
       ports = [ "${toString cfg.port}:7777" ];
       volumes = [
         "/var/lib/terraria/world:/root/.local/share/Terraria/Worlds"
-        "/var/lib/terraria/config:/tshock/tshock" # TShock config folder
+        "/var/lib/terraria/config:/tshock/tshock"
       ];
-      environment = {
-        WORLD_FILENAME = "deepwoods.wld";
-        AUTOCREATE = "2";
-      };
+      # Pass the explicit server flags to generate and load the world
+      cmd = [
+        "-world"
+        "/root/.local/share/Terraria/Worlds/deepwoods.wld"
+        "-autocreate"
+        "2" # 1 = Small, 2 = Medium, 3 = Large
+      ];
     };
 
     networking.firewall = {
