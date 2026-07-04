@@ -10,20 +10,28 @@ with lib;
 let
   cfg = config.deepwoods.apps.navidrome;
 
-  nfoPlugin = pkgs.fetchurl {
-    url = "https://github.com/metalheim/navidrome-plugin-artist-nfo-metadata/releases/download/v1.3.0/artist-nfo-metadata.ndp";
-    sha256 = "12ff10kqpxv6b7zii810ma2q1vxwkq1x26aykyzqlpqpjh6crmsl";
-  };
+  # FIX 1: Add `pname` and change output path to $out/share/${pname}.ndp
+  nfoPlugin = pkgs.runCommand "artist-nfo-metadata" {
+    pname = "artist-nfo-metadata";
+    passthru.isNavidromePlugin = true;
+  } ''
+    mkdir -p $out/share
+    ln -s ${pkgs.fetchurl {
+      url = "https://github.com/metalheim/navidrome-plugin-artist-nfo-metadata/releases/download/v1.3.0/artist-nfo-metadata.ndp";
+      sha256 = "12ff10kqpxv6b7zii810ma2q1vxwkq1x26aykyzqlpqpjh6crmsl";
+    }} $out/share/artist-nfo-metadata.ndp
+  '';
 
-  lrclibPlugin = pkgs.fetchurl {
-    url = "https://github.com/kepelet/navidrome-lrclib-plugin/releases/download/0.1.0/navidrome-lrclib.ndp";
-    sha256 = "0qbly3c0xgql9v90kqlk9pxvd514hlnsam3f7sq3x970irvng0ca";
-  };
-
-  navidromePlugins = pkgs.runCommand "navidrome-plugins" {} ''
-    mkdir -p $out
-    ln -s ${nfoPlugin} $out/artist-nfo-metadata.ndp
-    ln -s ${lrclibPlugin} $out/lrclib.ndp
+  # FIX 2: Add `pname` and change output path to $out/share/${pname}.ndp
+  lrclibPlugin = pkgs.runCommand "navidrome-lrclib" {
+    pname = "lrclib";
+    passthru.isNavidromePlugin = true;
+  } ''
+    mkdir -p $out/share
+    ln -s ${pkgs.fetchurl {
+      url = "https://github.com/kepelet/navidrome-lrclib-plugin/releases/download/0.1.0/navidrome-lrclib.ndp";
+      sha256 = "0qbly3c0xgql9v90kqlk9pxvd514hlnsam3f7sq3x970irvng0ca";
+    }} $out/share/lrclib.ndp
   '';
 
 in
@@ -41,14 +49,19 @@ in
   config = mkIf cfg.enable {
     services.navidrome = {
       enable = true;
+      
+      plugins = [
+        nfoPlugin
+        lrclibPlugin
+      ];
+
       settings = {
         MusicFolder = cfg.musicFolder;
         Address = "0.0.0.0";
         Port = 4533;
-
+        
         Plugins = {
           Enabled = true;
-          Folder = "${navidromePlugins}";
         };
 
         Agents = "artist-nfo-metadata,lastfm,deezer,spotify";
