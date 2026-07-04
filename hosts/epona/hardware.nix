@@ -21,6 +21,12 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/opt/hdd" =
+    { device = "/dev/disk/by-uuid/eec9cc51-096b-4c2d-adea-903ba48cecb5";
+      fsType = "ext4";
+      options = [ "defaults" "nofail" ];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/3db07c9a-7068-4bcf-ae52-9dc7ed626c9d"; }
     ];

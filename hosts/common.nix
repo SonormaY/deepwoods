@@ -64,5 +64,6 @@
     hddtemp
     lm_sensors
     smartmontools
+    parted
   ];
 }

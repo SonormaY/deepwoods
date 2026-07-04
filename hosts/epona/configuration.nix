@@ -104,6 +104,12 @@ in
 
     };
   };
+  
+  systemd.tmpfiles.rules = [
+    #Type    SymlinkPath        Mode User Group Age TargetPath
+    "L+      /opt/media         -    -    -     -   /opt/hdd/media"
+    "L+      /var/lib/torrent   -    -    -     -   /opt/hdd/torrent"
+  ];
 
   system.stateVersion = "25.11";
 }
