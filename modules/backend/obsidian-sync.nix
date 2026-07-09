@@ -25,6 +25,7 @@
     environment = {
       COUCHDB_USER = "sonorma";
       COUCHDB_DATABASE = "obsidian_vault";
+      NODENAME = "couchdb@127.0.0.1";
     };
   };
 }

@@ -55,8 +55,9 @@ in
     systemd.services.qbittorrent = {
       description = "qBittorrent-nox service";
       documentation = [ "man:qbittorrent-nox(1)" ];
-      after = [ "network.target" ];
+      after = [ "network.target" "opt-hdd-dependents.target" ];
       wantedBy = [ "multi-user.target" ];
+      bindsTo = [ "opt-hdd-dependents.target" ];
 
       serviceConfig = {
         Type = "simple";

@@ -15,6 +15,10 @@ in
       enable = true;
     };
 
-    systemd.services.lidarr.serviceConfig.SupplementaryGroups = [ "media" ];
+    systemd.services.lidarr = {
+      serviceConfig.SupplementaryGroups = [ "media" ];
+      bindsTo = [ "opt-hdd-dependents.target" ];
+      after = [ "opt-hdd-dependents.target" ];
+    };
   };
 }

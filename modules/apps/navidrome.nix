@@ -68,7 +68,11 @@ in
       };
     };
 
-    systemd.services.navidrome.serviceConfig.SupplementaryGroups = [ "media" ];
+    systemd.services.navidrome = {
+      bindsTo = [ "opt-hdd-dependents.target" ];
+      after = [ "opt-hdd-dependents.target" ];
+      serviceConfig.SupplementaryGroups = [ "media" ];
+    };
 
     systemd.tmpfiles.rules = [
       "d ${cfg.musicFolder} 0775 navidrome media -"

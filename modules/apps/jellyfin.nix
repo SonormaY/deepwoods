@@ -15,6 +15,10 @@ in
       enable = true;
     };
 
-    systemd.services.jellyfin.serviceConfig.SupplementaryGroups = [ "media" ];
+    systemd.services.jellyfin = {
+      bindsTo = [ "opt-hdd-dependents.target" ];
+      after = [ "opt-hdd-dependents.target" ];
+      serviceConfig.SupplementaryGroups = [ "media" ];
+    };
   };
 }

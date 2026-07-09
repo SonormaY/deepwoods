@@ -24,7 +24,7 @@
   fileSystems."/opt/hdd" =
     { device = "/dev/disk/by-uuid/eec9cc51-096b-4c2d-adea-903ba48cecb5";
       fsType = "ext4";
-      options = [ "defaults" "nofail" ];
+      options = [ "defaults" "nofail" "x-systemd.device-timeout=30s" ];
     };
 
   swapDevices =

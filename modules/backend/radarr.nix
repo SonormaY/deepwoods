@@ -15,10 +15,14 @@ in
       enable = true;
     };
     systemd = {
+      services.radarr = {
+        bindsTo = [ "opt-hdd-dependents.target" ];
+        after = [ "opt-hdd-dependents.target" ];
 
-      services.radarr.serviceConfig = {
-        SupplementaryGroups = [ "media" ];
-        Group = lib.mkForce "media";
+        serviceConfig = {
+          SupplementaryGroups = [ "media" ];
+          Group = lib.mkForce "media";
+        };
       };
 
       tmpfiles.rules = [

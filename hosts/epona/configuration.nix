@@ -105,11 +105,25 @@ in
     };
   };
   
-  systemd.tmpfiles.rules = [
-    #Type    SymlinkPath        Mode User Group Age TargetPath
-    "L+      /opt/media         -    -    -     -   /opt/hdd/media"
-    "L+      /var/lib/torrent   -    -    -     -   /opt/hdd/torrent"
-  ];
+  systemd = {
+    tmpfiles.rules = [
+      #Type  SymlinkPath        Mode  User         Group  Age  TargetPath
+      "L+    /opt/media         -     -            -      -    /opt/hdd/media"
+      "L+    /var/lib/torrent   -     -            -      -    /opt/hdd/torrent"
+      "d     /opt/hdd/media     0775  sonarr       media  -    -"
+      "d     /opt/hdd/torrent   0775  qbittorrent  media  -    -"
+    ];
+  
+    services."systemd-tmpfiles-setup" = {
+      requires = [ "opt-hdd.mount" ];
+      after = [ "opt-hdd.mount" ];
+    };
+    targets.opt-hdd-dependents = {
+      description = "Services requiring /opt/hdd";
+      requires = [ "opt-hdd.mount" ];
+      after = [ "opt-hdd.mount" ];
+    };
+  };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.11";
 }

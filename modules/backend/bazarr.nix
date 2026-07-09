@@ -16,8 +16,11 @@ in
       group = "media";
     };
 
-    systemd = {
-      services.bazarr.serviceConfig = {
+    systemd.services.bazarr = {
+      bindsTo = [ "opt-hdd-dependents.target" ];
+      after = [ "opt-hdd-dependents.target" ];
+
+      serviceConfig = {
         SupplementaryGroups = [ "media" ];
         Group = lib.mkForce "media";
         ReadWritePaths = [ 
